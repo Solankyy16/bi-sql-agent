@@ -1,0 +1,31 @@
+# .streamlit/config.toml
+# ─────────────────────
+# Streamlit server + theme configuration.
+# This file is safe to commit — it contains no secrets.
+# Secrets (API keys) go in .env, NEVER here.
+
+[server]
+# Disable file watcher in production environments
+# During development, leave this as true (default) for hot reload
+# headless = true  ← uncomment when deploying to a server
+
+[browser]
+# Disable the "you can now view your Streamlit app" gathering data prompt
+gatherUsageStats = false
+
+[theme]
+# A clean, professional dark theme that looks great for data dashboards
+base = "dark"
+primaryColor = "#7c6af5"         # Purple accent — matches chart bars
+backgroundColor = "#0e1117"      # Near-black page background
+secondaryBackgroundColor = "#1a1d27"  # Slightly lighter for cards/sidebar
+textColor = "#e0e0e0"            # Off-white text — easier on eyes than pure white
+font = "monospace"               # Monospace font for that "data terminal" feel
+
+# LIGHT THEME ALTERNATIVE — uncomment if you prefer light mode:
+# base = "light"
+# primaryColor = "#7c6af5"
+# backgroundColor = "#ffffff"
+# secondaryBackgroundColor = "#f5f5f5"
+# textColor = "#1a1a1a"
+# font = "sans serif"

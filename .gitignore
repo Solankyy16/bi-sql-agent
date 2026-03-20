@@ -1,0 +1,46 @@
+# ── SECRETS — never commit these ──────────────────────────────────────────────
+# The actual .env with your real API key. .env.example (safe template) IS committed.
+.env
+*.env
+
+# ── UPLOADED USER DATABASES ───────────────────────────────────────────────────
+# Files created by db/loader.py when a user uploads their own SQLite database.
+# These are written to the OS temp dir, but just in case:
+bi_agent_upload_*
+temp_*.db
+temp_*.sqlite
+
+# ── PYTHON CACHE ──────────────────────────────────────────────────────────────
+# Python writes these automatically. They're machine-specific and should never
+# be committed. Every developer regenerates them locally.
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# ── VIRTUAL ENVIRONMENT ───────────────────────────────────────────────────────
+# Your local venv folder. Never commit — it's huge and OS-specific.
+# Other devs run: python -m venv .venv && pip install -r requirements.txt
+.venv/
+venv/
+env/
+
+# ── FAISS VECTOR INDEX ────────────────────────────────────────────────────────
+# Generated at startup by rag/schema_embedder.py. Can be large (50-200MB).
+# Regenerated automatically, so no need to commit.
+rag/faiss_index/
+
+# ── STREAMLIT SECRETS ─────────────────────────────────────────────────────────
+# Alternative to .env for Streamlit Cloud deployments. Never commit.
+.streamlit/secrets.toml
+
+# ── OS NOISE ──────────────────────────────────────────────────────────────────
+.DS_Store          # macOS finder metadata
+Thumbs.db          # Windows thumbnail cache
+*.swp              # Vim swap files
+
+# ── DISTRIBUTION / BUILD ──────────────────────────────────────────────────────
+*.egg-info/
+dist/
+build/

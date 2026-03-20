@@ -1,0 +1,29 @@
+# ── Core Streamlit UI ─────────────────────────────────────────────────────────
+streamlit>=1.35.0               # The web app framework. Pure Python, no React needed.
+
+# ── LangChain ecosystem ───────────────────────────────────────────────────────
+langchain>=0.2.0                # Core abstractions: chains, prompts, output parsers
+langchain-community>=0.2.0     # Community integrations: SQLDatabase utility lives here
+langchain-groq>=0.1.0          # Groq-specific LLM wrapper (ChatGroq class)
+langgraph>=0.1.0               # The cyclic state machine engine for our agent loop
+
+# ── LLM Provider (free, fast) ─────────────────────────────────────────────────
+groq>=0.9.0                     # Official Groq Python SDK (used for Whisper STT too)
+
+# ── Schema RAG ────────────────────────────────────────────────────────────────
+faiss-cpu>=1.8.0               # Facebook's vector similarity search library (CPU version)
+sentence-transformers>=3.0.0   # HuggingFace embeddings — all-MiniLM-L6-v2 runs locally, free
+
+# ── Data & Charts ─────────────────────────────────────────────────────────────
+pandas>=2.2.0                  # DataFrames — convert SQL result rows into structured tables
+matplotlib>=3.9.0              # Chart rendering — st.pyplot() displays these in Streamlit
+
+# ── Voice ─────────────────────────────────────────────────────────────────────
+gTTS>=2.5.0                    # Google Text-to-Speech — converts text to mp3
+audio-recorder-streamlit>=0.0.8 # Mic button widget that captures audio inside Streamlit
+
+# ── Utilities ─────────────────────────────────────────────────────────────────
+python-dotenv>=1.0.0           # Loads .env file → os.environ so we never hardcode secrets
+sqlalchemy>=2.0.0              # SQLDatabase from LangChain uses SQLAlchemy under the hood
+plotly>=5.20.0               # Interactive charts via st.plotly_chart()
+pymongo>=4.6.0                 # MongoDB driver — needed for connect_mongodb() and mongo_nodes.py
